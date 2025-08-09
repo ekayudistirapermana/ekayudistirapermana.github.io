@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eka Yudistira Permana | Digital Marketing Leader</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
@@ -22,6 +23,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
             background-color: var(--light-color);
@@ -36,12 +41,14 @@
             padding: 0 2rem;
         }
 
-        /* Header */
         header {
             background: var(--light-color);
             color: var(--dark-color);
-            padding: 2rem 0;
+            padding: 1.5rem 0;
             border-bottom: 1px solid #e6e6e6;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         header .container {
@@ -51,8 +58,7 @@
         }
 
         header h1 {
-            font-size: 2rem;
-            font-weight: 700;
+            font-size: 1.8rem;
         }
 
         header nav a {
@@ -67,7 +73,6 @@
             color: var(--primary-color);
         }
 
-        /* Hero Section */
         .hero {
             background: var(--secondary-color);
             padding: 4rem 0;
@@ -117,7 +122,22 @@
             margin-right: 1.5rem;
         }
 
-        /* Section Styling */
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--light-color);
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #004b8d;
+        }
+        
         section {
             padding: 4rem 0;
         }
@@ -142,7 +162,6 @@
             background: var(--primary-color);
         }
 
-        /* Highlights Section */
         #highlights {
             background: var(--secondary-color);
         }
@@ -158,24 +177,10 @@
             padding: 1.5rem;
             border-radius: 8px;
             box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
         }
         
-        .highlight-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .highlight-card h3 {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+        .skills-column {
+            margin-bottom: 2rem;
         }
 
         .skills-column h3 {
@@ -183,21 +188,32 @@
             color: var(--dark-color);
             border-bottom: 2px solid var(--primary-color);
             padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
-        .skills-list {
-            list-style: none;
+        .skill-tag {
+            background-color: var(--light-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 500;
+            border: 1px solid #ddd;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            cursor: default;
         }
 
-        .skills-list li {
-            background: var(--secondary-color);
-            margin-bottom: 0.5rem;
-            padding: 0.75rem;
-            border-radius: 5px;
+        .skill-tag:hover {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            border-color: var(--primary-color);
         }
 
-        /* Experience Section */
         #experience {
              background: var(--secondary-color);
         }
@@ -261,11 +277,12 @@
             color: var(--primary-color);
         }
         
-        .timeline-content h4 {
+        .timeline-content h4, .timeline-content h5 {
             font-size: 1rem;
             font-weight: 600;
             color: var(--dark-color);
             margin-bottom: 0.5rem;
+            margin-top: 1rem;
         }
         
         .timeline-content .date {
@@ -284,7 +301,6 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Portfolio Section */
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -296,13 +312,10 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
         
-        .portfolio-item:hover {
-             transform: translateY(-5px);
-        }
-
         .portfolio-item img {
             width: 100%;
             height: 220px;
@@ -312,6 +325,7 @@
 
         .portfolio-info {
             padding: 1.5rem;
+            flex-grow: 1;
         }
 
         .portfolio-info h3 {
@@ -322,8 +336,120 @@
         .portfolio-info p {
             font-size: 0.9rem;
         }
+        
+        .portfolio-info a {
+            display: inline-block;
+            margin-top: 1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .portfolio-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .case-study {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--primary-color);
+        }
 
-        /* Footer */
+        .social-showcase {
+            margin-top: 3rem;
+        }
+        
+        .showcase-grid {
+             display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .showcase-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .showcase-card h4 {
+             font-size: 1.3rem;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+        
+        .showcase-card a {
+            display: block;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            transition: color 0.3s ease;
+        }
+
+        .showcase-card a i {
+            margin-right: 0.75rem;
+            font-size: 1.2rem;
+        }
+        
+        .showcase-card a:hover {
+            color: var(--dark-color);
+        }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .kpi-card {
+            background: var(--secondary-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .kpi-card h3 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .kpi-card p {
+            font-size: 1rem;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        .back-to-top-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s, visibility 0.4s;
+            z-index: 1000;
+        }
+
+        .back-to-top-btn.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
         footer {
             background: var(--dark-color);
             color: var(--light-color);
@@ -331,15 +457,34 @@
             padding: 2rem 0;
         }
         
-        /* Responsive */
+        /* SCROLL ANIMATION */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
         @media(max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            header h1 {
+                font-size: 1.5rem;
+            }
+            header nav a {
+                margin: 0 0.5rem;
+            }
+
             .hero-content {
                 flex-direction: column;
                 text-align: center;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
             }
 
             .timeline::after {
@@ -369,7 +514,9 @@
             <h1>Eka Yudistira Permana</h1>
             <nav>
                 <a href="#experience">Experience</a>
-                <a href="#portfolio">Portfolio</a>
+                <a href="#case-studies">Case Studies</a>
+                <a href="#freelance">Freelance</a>
+                <a href="#social-media">Social Media</a>
                 <a href="#contact">Contact</a>
             </nav>
         </div>
@@ -386,11 +533,14 @@
                      <a href="mailto:ekayudistirapermana@gmail.com">ekayudistirapermana@gmail.com</a>
                      <a href="tel:+6282298546131">+62 822 9854 6131</a>
                 </div>
+                <a href="CV_Eka_Yudistira_Permana.pdf" class="btn" download>
+                    <i class="fas fa-download"></i> Download CV
+                </a>
             </div>
         </div>
     </section>
 
-    <section id="highlights">
+    <section id="highlights" class="fade-in-section">
         <div class="container">
             <h2 class="section-title">Career Highlights</h2>
             <div class="highlights-grid">
@@ -422,38 +572,36 @@
         </div>
     </section>
     
-    <section id="skills">
+    <section id="skills" class="fade-in-section" style="background: var(--secondary-color);">
         <div class="container">
              <h2 class="section-title">Core Skills</h2>
-             <div class="skills-grid">
-                 <div class="skills-column">
-                     <h3>Marketing & Strategy</h3>
-                     <ul class="skills-list">
-                         <li>SEO Strategy & Technical Optimization</li>
-                         <li>Performance Marketing (Google, Meta, TikTok, Linkedin Ads)</li>
-                         <li>Lead Generation & Conversion Optimization</li>
-                         <li>Growth Hacking & Funnel Development</li>
-                         <li>Email Marketing & CRM Automation</li>
-                         <li>Product-Led Marketing & Go-to-Market Execution</li>
-                         <li>Leadership & Regional Team Management</li>
-                     </ul>
+             <div class="skills-column">
+                 <h3>Marketing & Strategy</h3>
+                 <div class="skills-tags">
+                    <span class="skill-tag">SEO Strategy & Technical Optimization</span>
+                    <span class="skill-tag">Performance Marketing (Google, Meta, TikTok, Linkedin Ads)</span>
+                    <span class="skill-tag">Lead Generation & Conversion Optimization</span>
+                    <span class="skill-tag">Growth Hacking & Funnel Development</span>
+                    <span class="skill-tag">Email Marketing & CRM Automation</span>
+                    <span class="skill-tag">Product-Led Marketing & Go-to-Market Execution</span>
+                    <span class="skill-tag">Leadership & Regional Team Management</span>
                  </div>
-                 <div class="skills-column">
-                     <h3>Tools & Technologies</h3>
-                     <ul class="skills-list">
-                        <li>Google Ads, Meta Ads, TikTok Ads</li>
-                        <li>SEO Tools (Ahrefs, GSC)</li>
-                        <li>GA4, HubSpot, Mailchimp</li>
-                        <li>WordPress, Figma, HTML/CSS</li>
-                        <li>Google Tag Manager, Looker Studio</li>
-                        <li>XML, JAVA, PHP</li>
-                     </ul>
+             </div>
+             <div class="skills-column">
+                 <h3>Tools & Technologies</h3>
+                 <div class="skills-tags">
+                    <span class="skill-tag">Google Ads, Meta Ads, TikTok Ads</span>
+                    <span class="skill-tag">SEO Tools (Ahrefs, GSC)</span>
+                    <span class="skill-tag">GA4, HubSpot, Mailchimp</span>
+                    <span class="skill-tag">WordPress, Figma, HTML/CSS</span>
+                    <span class="skill-tag">Google Tag Manager, Looker Studio</span>
+                    <span class="skill-tag">XML, JAVA, PHP</span>
                  </div>
              </div>
         </div>
     </section>
 
-    <section id="experience">
+    <section id="experience" class="fade-in-section">
         <div class="container">
             <h2 class="section-title">Professional Experience</h2>
             <div class="timeline">
@@ -462,11 +610,12 @@
                         <h3>eFishery</h3>
                         <h4>Head of Digital Marketing</h4>
                         <p class="date">2021 - 2024</p>
-                        <p>Led the end-to-end digital marketing strategy for Indonesia's leading agritech startup.</p>
+                        <p>Led the end-to-end digital marketing strategy to scale user acquisition for eFishery's ecosystem of web and mobile products, driving significant growth in the agritech sector.</p>
+                        <h5>Key Outcomes:</h5>
                         <ul>
-                            <li>Reduced cost-per-acquisition (CPA) by 30% through creative testing and bid optimization.</li>
-                            <li>Increased qualified leads by 45% through improved targeting and funnel enhancements.</li>
-                            <li>Launched marketing automation campaigns that lifted retention by over 25%.</li>
+                            <li>Reduced Cost-Per-Acquisition (CPA) by 30%.</li>
+                            <li>Increased qualified leads by 45% through improved targeting.</li>
+                            <li>Lifted user retention by over 25% with new marketing automation campaigns.</li>
                         </ul>
                     </div>
                 </div>
@@ -475,11 +624,12 @@
                         <h3>mClinica Pte Ltd</h3>
                         <h4>Regional Digital Marketing Manager (SEA)</h4>
                         <p class="date">2020 - 2021</p>
-                        <p>Led digital marketing strategy across Southeast Asia for a health-tech SaaS platform.</p>
+                        <p>Led a major B2B lead generation campaign across Southeast Asia for the SwipeRx health-tech SaaS platform, developing and localizing marketing funnels for diverse markets like Indonesia, the Philippines, and Vietnam.</p>
+                        <h5>Key Outcomes:</h5>
                         <ul>
-                            <li>Generated 35,000+ qualified B2B leads across SEA in 12 months.</li>
-                            <li>Reduced CPL by 40% through audience refinement and landing page optimization.</li>
-                            <li>Increased email engagement rates by 2.5x with segmented automation workflows.</li>
+                            <li>Generated over 35,000 qualified B2B leads across SEA in just 12 months.</li>
+                            <li>Reduced Cost Per Lead (CPL) by 40%.</li>
+                            <li>Increased email engagement rates by 2.5x using segmented automation.</li>
                         </ul>
                     </div>
                 </div>
@@ -488,10 +638,12 @@
                         <h3>Focus Software Development</h3>
                         <h4>Regional Digital Marketing Manager</h4>
                         <p class="date">2018 - 2020</p>
-                        <p>Designed and executed full-funnel digital strategy for a custom software company expanding in Cambodia & Vietnam.</p>
-                         <ul>
+                         <p>Designed and executed a full-funnel digital strategy to drive growth as the company expanded into Cambodia and Vietnam, integrating both organic and paid channels to build a sustainable pipeline of B2B clients.</p>
+                        <h5>Key Outcomes:</h5>
+                        <ul>
                             <li>Increased monthly inbound leads by 3x in less than 6 months.</li>
                             <li>Achieved 200% YoY growth in organic traffic through SEO improvements.</li>
+                            <li>Reduced customer acquisition cost by 35% via targeted campaigns.</li>
                         </ul>
                     </div>
                 </div>
@@ -500,10 +652,12 @@
                         <h3>PT David Roy Indonesia (Dilmah Tea)</h3>
                         <h4>Digital Marketing Supervisor</h4>
                         <p class="date">2016 - 2018</p>
-                        <p>Managed the digital transformation and online marketing strategy for Dilmah Tea Indonesia.</p>
-                         <ul>
+                        <p>Managed the digital transformation for Dilmah Tea in Indonesia, boosting online sales and brand engagement by revamping the strategy across e-commerce (Shopee, Tokopedia), digital ads, and social media.</p>
+                        <h5>Key Outcomes:</h5>
+                        <ul>
                             <li>Boosted monthly e-commerce sales by 75% within one year.</li>
-                            <li>Increased Instagram engagement by 300% through content revamp and influencer partnerships.</li>
+                            <li>Increased Instagram engagement by 300%.</li>
+                            <li>Reduced ad spend waste by 20%.</li>
                         </ul>
                     </div>
                 </div>
@@ -511,37 +665,192 @@
         </div>
     </section>
 
-    <section id="portfolio">
+    <section id="case-studies" class="fade-in-section" style="background: var(--secondary-color);">
         <div class="container">
-            <h2 class="section-title">Portfolio Showcase</h2>
+            <h2 class="section-title">Deep-Dive Case Studies</h2>
+
+            <div class="case-study">
+                <h3>Case Study: eFishery (Agritech)</h3>
+                <p>The core goal at eFishery was to establish digital dominance in Indonesia's aquaculture industry. My strategy involved creating a comprehensive digital ecosystem, combining aggressive SEO for the main website with targeted App Store Optimization (ASO) and marketing for the eFisheryKu and eFarm mobile apps. This integrated approach was designed to capture and engage the entire spectrum of users, from individual farmers to large investors.</p>
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <h3>227K+</h3>
+                        <p>Monthly Organic Visitors</p>
+                    </div>
+                    <div class="kpi-card">
+                        <h3>50K+</h3>
+                        <p>Monthly Qualified Leads</p>
+                    </div>
+                    <div class="kpi-card">
+                        <h3>202K+</h3>
+                        <p>Total App Downloads</p>
+                    </div>
+                    <div class="kpi-card">
+                        <h3>+200%</h3>
+                        <p>Organic Growth (6 Mos)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <h3>Case Study: mClinica / SwipeRx (Health-Tech SaaS)</h3>
+                <p>The challenge was to drive B2B lead generation and user acquisition for the SwipeRx platform across key Southeast Asian markets. I developed and executed a multi-channel performance marketing strategy using LinkedIn for professional targeting, Google Ads for high-intent leads, and localized funnels to nurture prospects, alongside an ASO strategy for the mobile app.</p>
+                 <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <h3>35,000+</h3>
+                        <p>B2B Leads (12 Mos)</p>
+                    </div>
+                    <div class="kpi-card">
+                        <h3>290K+</h3>
+                        <p>App Downloads</p>
+                    </div>
+                    <div class="kpi-card">
+                        <h3>-40%</h3>
+                        <p>Cost Per Lead</p>
+                    </div>
+                    <div class="kpi-card">
+                        <h3>+2.5x</h3>
+                        <p>Email Engagement</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <h3>Case Study: INAURA (Social Media Growth)</h3>
+                <p>For INAURA, the mission was to rapidly scale their digital audience and build an engaged community to support e-commerce sales. I executed a multi-platform social media strategy using Instagram and Facebook for community building, TikTok for viral reach, and LinkedIn for B2B connections. The results demonstrate explosive growth in brand awareness and audience connection.</p>
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <h3>207,378</h3>
+                        <p>Total Audience</p>
+                    </div>
+                    <div class="kpi-card">
+                        <h3>166,649</h3>
+                        <p>Net New Followers</p>
+                    </div>
+                    <div class="kpi-card">
+                        <h3>26.9M+</h3>
+                        <p>Total Impressions</p>
+                    </div>
+                    <div class="kpi-card">
+                        <h3>308,854</h3>
+                        <p>Total Engagements</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <h3>Case Study: DRISHOP (E-commerce SEO)</h3>
+                <p>The goal for DRISHOP was to build an organic traffic funnel from scratch for a new e-commerce site, focusing entirely on new customer acquisition. I executed an SEO strategy targeting high-intent, non-branded keywords (like "franchise kopi") to capture users who were not yet aware of the brand, successfully creating a new sales funnel.</p>
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <h3>100%</h3>
+                        <p>Non-Branded Traffic</p>
+                    </div>
+                    <div class="kpi-card">
+                        <h3>825</h3>
+                        <p>Monthly Organic Visitors</p>
+                    </div>
+                    <div class="kpi-card">
+                        <h3>316</h3>
+                        <p>Ranking Keywords</p>
+                    </div>
+                    <div class="kpi-card">
+                        <h3>Top 3</h3>
+                        <p>Rank for "Franchise Kopi"</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <h3>Case Study: Focus Software (Inbound Growth)</h3>
+                <p>My objective was to build a scalable inbound marketing engine to support this B2B company's expansion into new markets. I designed a full-funnel strategy combining a complete SEO overhaul to drive organic traffic with targeted performance campaigns to convert that traffic into a pipeline of qualified inbound leads, fueling their regional growth.</p>
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <h3>3x</h3>
+                        <p>Inbound Leads (6 Mos)</p>
+                    </div>
+                    <div class="kpi-card">
+                        <h3>+200%</h3>
+                        <p>YoY Organic Traffic</p>
+                    </div>
+                    <div class="kpi-card">
+                        <h3>-35%</h3>
+                        <p>Acquisition Cost</p>
+                    </div>
+                    <div class="kpi-card">
+                        <h3>Success</h3>
+                        <p>in New Markets (KH & VN)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="freelance" class="fade-in-section">
+        <div class="container">
+            <h2 class="section-title">Freelance & Consulting Projects</h2>
             <div class="portfolio-grid">
                 <div class="portfolio-item">
-                    <img src="https://efishery.com/wp-content/uploads/2023/10/About-us-eFishery-1.webp" alt="eFishery Website">
+                    <img src="https://i.ibb.co/3kR0V7y/kpai-app.png" alt="KPAI Child Protection App">
                     <div class="portfolio-info">
-                        <h3>eFishery Digital Presence</h3>
-                        <p>Developed and marketed the company website using WordPress, with a main goal to bring up SEO for fish farmers.</p>
+                        <h3>KPAI - Child Protection App</h3>
+                        <p>Developed a critical application for the Indonesian Child Protection Commission (KPAI) designed to help prevent child abuse. This social impact project involved creating a protective tool for children, with the linked video serving as a demonstration of its features and mission.</p>
+                        <a href="https://www.youtube.com/watch?v=lCGeBxmO6gc" target="_blank" rel="noopener">Watch Demo Video &rarr;</a>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://i.ibb.co/CbfVfWc/jtm-trans.png" alt="JTM Trans Website">
+                    <div class="portfolio-info">
+                        <h3>JTM Trans - B2B Website & SEO</h3>
+                        <p>Developed a professional corporate website on WordPress for this logistics company. Implemented a foundational SEO strategy to improve online visibility and attract B2B clients through organic search.</p>
+                        <a href="https://jtmtrans.co.id/" target="_blank" rel="noopener">Visit Website &rarr;</a>
                     </div>
                 </div>
                  <div class="portfolio-item">
-                     <img src="https://www.swiperx.com/wp-content/uploads/2024/02/Home-page-banner.webp" alt="SwipeRx Website">
+                    <img src="https://i.ibb.co/YhGvWq8/pulau-jaya.png" alt="Pulau Jaya Website">
                     <div class="portfolio-info">
-                        <h3>SwipeRx Health-Tech Platform</h3>
-                        <p>Marketed the website to bring in users from the pharmacist community across Southeast Asia.</p>
+                        <h3>Pulau Jaya - Corporate Web Presence</h3>
+                        <p>Built a clean, mobile-responsive company website to serve as a digital hub for corporate information and client inquiries. Focused on a professional design and clear user experience to build credibility.</p>
+                         <a href="https://pulaujaya.com/" target="_blank" rel="noopener">Visit Website &rarr;</a>
                     </div>
                 </div>
                  <div class="portfolio-item">
-                    <img src="https://shop.dilmah.co.id/wp-content/uploads/2024/05/DILMAH-TEAS-HEALTH-BENEFITS-OF-TEA-IN-A-NUTSHELL-2.jpg" alt="Dilmah Tea Website">
+                    <img src="https://i.ibb.co/VDP2G7z/drishop.png" alt="DRISHOP Website">
                     <div class="portfolio-info">
-                        <h3>Dilmah Tea E-Commerce</h3>
-                        <p>Developed the WordPress website and executed digital marketing to boost SEO and online sales for Dilmah tea.</p>
+                        <h3>DRISHOP - E-commerce Development</h3>
+                        <p>Developed a full-featured e-commerce website using WordPress and WooCommerce. Executed digital marketing campaigns with a focus on SEO for coffee and tea products to drive online sales from scratch.</p>
+                        <a href="https://drishop.co.id/" target="_blank" rel="noopener">Visit Website &rarr;</a>
                     </div>
                 </div>
-                 <div class="portfolio-item">
-                    <img src="https://www.inaura.co.id/wp-content/uploads/2022/07/Inaura-banner-3-scaled.jpg" alt="Inaura Website">
-                    <div class="portfolio-info">
-                        <h3>INAURA E-Commerce Growth</h3>
-                        <p>Developed the WordPress website and digital strategy to drive customers to buy on the e-commerce platform.</p>
-                    </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="social-media" class="fade-in-section" style="background: var(--secondary-color);">
+        <div class="container">
+            <h2 class="section-title">Social Media Showcase</h2>
+            <div class="showcase-grid">
+                <div class="showcase-card">
+                    <h4>INAURA</h4>
+                    <a href="https://www.instagram.com/inauraprofessional/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="https://www.tiktok.com/@inaura.pro" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i> TikTok</a>
+                    <a href="https://www.facebook.com/inaura.professional/" target="_blank" rel="noopener"><i class="fab fa-facebook"></i> Facebook</a>
+                </div>
+                <div class="showcase-card">
+                    <h4>eFishery</h4>
+                    <a href="https://www.instagram.com/efishery/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="https://www.tiktok.com/@efisheryid" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i> TikTok</a>
+                    <a href="https://www.linkedin.com/company/efishery/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                </div>
+                 <div class="showcase-card">
+                    <h4>SwipeRx</h4>
+                     <a href="https://www.instagram.com/swiperx.id/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="https://www.facebook.com/SwipeRx.ID" target="_blank" rel="noopener"><i class="fab fa-facebook"></i> Facebook</a>
+                </div>
+                <div class="showcase-card">
+                    <h4>Dilmah Tea</h4>
+                    <a href="https://www.instagram.com/dilmah.indonesia/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="https://www.facebook.com/DilmahID" target="_blank" rel="noopener"><i class="fab fa-facebook"></i> Facebook</a>
                 </div>
             </div>
         </div>
@@ -556,6 +865,37 @@
             <p style="margin-top: 2rem;">&copy; 2025 Eka Yudistira Permana. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <a href="#" id="back-to-top" class="back-to-top-btn"><i class="fas fa-arrow-up"></i></a>
+
+    <script>
+        // Back to Top Button Logic
+        const backToTopButton = document.querySelector("#back-to-top");
+
+        window.addEventListener("scroll", () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add("visible");
+            } else {
+                backToTopButton.classList.remove("visible");
+            }
+        });
+
+        // Scroll Animation Logic
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-visible");
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        const sectionsToAnimate = document.querySelectorAll(".fade-in-section");
+        sectionsToAnimate.forEach((section) => {
+            observer.observe(section);
+        });
+    </script>
 
 </body>
 </html>
