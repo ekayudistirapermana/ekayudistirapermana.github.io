@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eka Yudistira Permana | Digital Marketing Leader</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        :root {
+            --primary-color: #0a66c2; /* Professional Blue */
+            --secondary-color: #f4f4f4; /* Light Gray Background */
+            --dark-color: #333;
+            --light-color: #fff;
+            --text-color: #555;
+            --shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        header {
+            background: var(--light-color);
+            color: var(--dark-color);
+            padding: 2rem 0;
+            border-bottom: 1px solid #e6e6e6;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        header nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        header nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--secondary-color);
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            text-align: left;
+            flex-wrap: wrap;
+        }
+        
+        .hero-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--light-color);
+            box-shadow: var(--shadow);
+        }
+
+        .hero-text h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .hero-text .subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .hero-text p {
+            max-width: 600px;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-info a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-right: 1.5rem;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+        }
+
+        /* Highlights Section */
+        #highlights {
+            background: var(--secondary-color);
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .highlight-card {
+            background: var(--light-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .highlight-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .highlight-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .skills-column h3 {
+            font-size: 1.2rem;
+            color: var(--dark-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .skills-list {
+            list-style: none;
+        }
+
+        .skills-list li {
+            background: var(--secondary-color);
+            margin-bottom: 0.5rem;
+            padding: 0.75rem;
+            border-radius: 5px;
+        }
+
+        /* Experience Section */
+        #experience {
+             background: var(--secondary-color);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 100%;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -12px;
+            background-color: white;
+            border: 4px solid var(--primary-color);
+            top: 25px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -8px;
+        }
+
+        .timeline-content {
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .timeline-content h3 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+        }
+        
+        .timeline-content h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-content .date {
+            font-size: 0.9rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            color: #777;
+        }
+
+        .timeline-content ul {
+            list-style-position: inside;
+            padding-left: 0;
+        }
+
+        .timeline-content ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Portfolio Section */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .portfolio-item {
+            background: var(--light-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .portfolio-item:hover {
+             transform: translateY(-5px);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .portfolio-info {
+            padding: 1.5rem;
+        }
+
+        .portfolio-info h3 {
+            font-size: 1.2rem;
+            color: var(--dark-color);
+        }
+
+        .portfolio-info p {
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: var(--light-color);
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        /* Responsive */
+        @media(max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-item::after {
+                left: 21px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Eka Yudistira Permana</h1>
+            <nav>
+                <a href="#experience">Experience</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <img src="https://i.ibb.co/L9BvH7g/profile-placeholder.jpg" alt="Eka Yudistira Permana" class="hero-img">
+            <div class="hero-text">
+                <h2>Growth-Focused Marketing Leader</h2>
+                <p class="subtitle">Innovative Digital Marketing Leader with 13+ years of experience, including 5+ years in regional and managerial roles across Southeast Asia.</p>
+                <p>Specialized in scaling digital growth through SEO, SEM, PPC, CRM, and e-commerce strategies—driving measurable impact across SaaS, agritech, health-tech, and FMCG.</p>
+                <div class="contact-info">
+                     <a href="mailto:ekayudistirapermana@gmail.com">ekayudistirapermana@gmail.com</a>
+                     <a href="tel:+6282298546131">+62 822 9854 6131</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="highlights">
+        <div class="container">
+            <h2 class="section-title">Career Highlights</h2>
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <h3>+200%</h3>
+                    <p>Organic Traffic Growth within 6 months by leading a complete SEO and content strategy revamp.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>50K+</h3>
+                    <p>Built a Lead Generation Engine from 0 to over 50,000 qualified monthly leads across Indonesia, Cambodia, and Vietnam.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>3x ROAS</h3>
+                    <p>Managed Regional Campaigns across SEA markets with localized strategies that improved ROAS by 3x.</p>
+                </div>
+                 <div class="highlight-card">
+                    <h3>-30% CPA</h3>
+                    <p>Reduced Cost-Per-Acquisition by 30% while scaling performance ad spend across Google & Meta.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>+45% CVR</h3>
+                    <p>Increased Conversion Rate by 45% through A/B testing, landing page optimization, and funnel redesign.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>+25% Retention</h3>
+                    <p>Launched CRM & Email Automation Flows that improved user reactivation and retention by over 25%.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="skills">
+        <div class="container">
+             <h2 class="section-title">Core Skills</h2>
+             <div class="skills-grid">
+                 <div class="skills-column">
+                     <h3>Marketing & Strategy</h3>
+                     <ul class="skills-list">
+                         <li>SEO Strategy & Technical Optimization</li>
+                         <li>Performance Marketing (Google, Meta, TikTok, Linkedin Ads)</li>
+                         <li>Lead Generation & Conversion Optimization</li>
+                         <li>Growth Hacking & Funnel Development</li>
+                         <li>Email Marketing & CRM Automation</li>
+                         <li>Product-Led Marketing & Go-to-Market Execution</li>
+                         <li>Leadership & Regional Team Management</li>
+                     </ul>
+                 </div>
+                 <div class="skills-column">
+                     <h3>Tools & Technologies</h3>
+                     <ul class="skills-list">
+                        <li>Google Ads, Meta Ads, TikTok Ads</li>
+                        <li>SEO Tools (Ahrefs, GSC)</li>
+                        <li>GA4, HubSpot, Mailchimp</li>
+                        <li>WordPress, Figma, HTML/CSS</li>
+                        <li>Google Tag Manager, Looker Studio</li>
+                        <li>XML, JAVA, PHP</li>
+                     </ul>
+                 </div>
+             </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>eFishery</h3>
+                        <h4>Head of Digital Marketing</h4>
+                        <p class="date">2021 - 2024</p>
+                        <p>Led the end-to-end digital marketing strategy for Indonesia's leading agritech startup.</p>
+                        <ul>
+                            <li>Reduced cost-per-acquisition (CPA) by 30% through creative testing and bid optimization.</li>
+                            <li>Increased qualified leads by 45% through improved targeting and funnel enhancements.</li>
+                            <li>Launched marketing automation campaigns that lifted retention by over 25%.</li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>mClinica Pte Ltd</h3>
+                        <h4>Regional Digital Marketing Manager (SEA)</h4>
+                        <p class="date">2020 - 2021</p>
+                        <p>Led digital marketing strategy across Southeast Asia for a health-tech SaaS platform.</p>
+                        <ul>
+                            <li>Generated 35,000+ qualified B2B leads across SEA in 12 months.</li>
+                            <li>Reduced CPL by 40% through audience refinement and landing page optimization.</li>
+                            <li>Increased email engagement rates by 2.5x with segmented automation workflows.</li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Focus Software Development</h3>
+                        <h4>Regional Digital Marketing Manager</h4>
+                        <p class="date">2018 - 2020</p>
+                        <p>Designed and executed full-funnel digital strategy for a custom software company expanding in Cambodia & Vietnam.</p>
+                         <ul>
+                            <li>Increased monthly inbound leads by 3x in less than 6 months.</li>
+                            <li>Achieved 200% YoY growth in organic traffic through SEO improvements.</li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>PT David Roy Indonesia (Dilmah Tea)</h3>
+                        <h4>Digital Marketing Supervisor</h4>
+                        <p class="date">2016 - 2018</p>
+                        <p>Managed the digital transformation and online marketing strategy for Dilmah Tea Indonesia.</p>
+                         <ul>
+                            <li>Boosted monthly e-commerce sales by 75% within one year.</li>
+                            <li>Increased Instagram engagement by 300% through content revamp and influencer partnerships.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="container">
+            <h2 class="section-title">Portfolio Showcase</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://efishery.com/wp-content/uploads/2023/10/About-us-eFishery-1.webp" alt="eFishery Website">
+                    <div class="portfolio-info">
+                        <h3>eFishery Digital Presence</h3>
+                        <p>Developed and marketed the company website using WordPress, with a main goal to bring up SEO for fish farmers.</p>
+                    </div>
+                </div>
+                 <div class="portfolio-item">
+                     <img src="https://www.swiperx.com/wp-content/uploads/2024/02/Home-page-banner.webp" alt="SwipeRx Website">
+                    <div class="portfolio-info">
+                        <h3>SwipeRx Health-Tech Platform</h3>
+                        <p>Marketed the website to bring in users from the pharmacist community across Southeast Asia.</p>
+                    </div>
+                </div>
+                 <div class="portfolio-item">
+                    <img src="https://shop.dilmah.co.id/wp-content/uploads/2024/05/DILMAH-TEAS-HEALTH-BENEFITS-OF-TEA-IN-A-NUTSHELL-2.jpg" alt="Dilmah Tea Website">
+                    <div class="portfolio-info">
+                        <h3>Dilmah Tea E-Commerce</h3>
+                        <p>Developed the WordPress website and executed digital marketing to boost SEO and online sales for Dilmah tea.</p>
+                    </div>
+                </div>
+                 <div class="portfolio-item">
+                    <img src="https://www.inaura.co.id/wp-content/uploads/2022/07/Inaura-banner-3-scaled.jpg" alt="Inaura Website">
+                    <div class="portfolio-info">
+                        <h3>INAURA E-Commerce Growth</h3>
+                        <p>Developed the WordPress website and digital strategy to drive customers to buy on the e-commerce platform.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <h2>Let's Connect</h2>
+            <p>Ready to drive growth together? Reach out to me.</p>
+            <p><strong>Email:</strong> ekayudistirapermana@gmail.com</p>
+            <p><strong>Phone:</strong> +62 822 9854 6131</p>
+            <p style="margin-top: 2rem;">&copy; 2025 Eka Yudistira Permana. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
