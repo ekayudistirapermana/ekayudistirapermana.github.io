@@ -150,6 +150,12 @@
             color: var(--primary-color);
         }
 
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
         .btn {
             display: inline-block;
             background: var(--primary-color);
@@ -164,6 +170,14 @@
         .btn:hover {
             background: #1e4e8c;
             transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--dark-color);
+        }
+
+        .btn-secondary:hover {
+            background: #333333;
         }
         
         section {
@@ -605,6 +619,9 @@
             .contact-info {
                 justify-content: center;
             }
+            .btn-group {
+                justify-content: center;
+            }
             .timeline::after {
                 left: 31px;
             }
@@ -649,9 +666,14 @@
                      <a href="tel:+6282298546131"><i class="fas fa-phone"></i> +62 822 9854 6131</a>
                      <span><i class="fas fa-globe"></i> Open to Remote Worldwide</span>
                 </div>
-                <a href="CV_Eka_Yudistira_Permana.pdf" class="btn" download>
-                    <i class="fas fa-download"></i> Download CV
-                </a>
+                <div class="btn-group">
+                    <a href="CV_Eka_Yudistira_Permana.pdf" class="btn" download>
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                    <a href="project.html" class="btn btn-secondary">
+                        <i class="fas fa-chart-bar"></i> View Infographic
+                    </a>
+                </div>
             </div>
         </div>
     </section>
